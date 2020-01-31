@@ -1,6 +1,4 @@
-package com.meproduction.rentalapp;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.meproduction.rentalapp.Activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,6 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.meproduction.rentalapp.Database.DatabaseHelper;
+import com.meproduction.rentalapp.R;
 
 public class LoginActivity extends Activity {
 
@@ -29,12 +30,15 @@ public class LoginActivity extends Activity {
             public void onClick(View v) {
                 String email = e1.getText().toString();
                 String password = e2.getText().toString();
-                Boolean validasi = db.toLogin(email,password);
-                if (validasi==true)
-                    Toast.makeText(getApplicationContext(),"Anda Berhasil Login", Toast.LENGTH_LONG).show();
-                else
-                    Toast.makeText(getApplicationContext(),"Email dan Password Salah", Toast.LENGTH_LONG).show();
 
+                Boolean validasi = db.toLogin(email,password);
+                if (validasi==true) {
+                    Intent in = new Intent(LoginActivity.this, DashboardActivity.class);
+                    startActivity(in);
+                    finish();
+                }else {
+                    Toast.makeText(getApplicationContext(), "Email dan Password Salah", Toast.LENGTH_LONG).show();
+                }
             }
         });
         b2 = findViewById(R.id.btn_toRegist);
@@ -42,7 +46,7 @@ public class LoginActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent in = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(in);
+                LoginActivity.this.startActivity(in);
             }
         });
     }

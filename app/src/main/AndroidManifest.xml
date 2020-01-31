@@ -9,12 +9,54 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RegisterActivity"></activity>
-        <activity android:name=".LoginActivity" />
+
         <activity
-            android:name=".ui.login.LoginActivity"
-            android:label="@string/title_activity_login" />
-        <activity android:name=".splashScreen">
+            android:name=".Activity.PenyewaDetailActivity"
+            android:label="Detail Penyewa"
+            android:parentActivityName=".Activity.DashboardActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activity.DashboardActivity"/>
+        </activity>
+
+        <activity android:name=".Activity.SewaMobilActivity"
+            android:label="Form Sewa Mobil">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activity.DashboardActivity"/>
+        </activity>
+
+        <activity android:name=".Activity.ListDetailActivity"
+            android:label="Detail Kendaraan">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activity.DashboardActivity"/>
+        </activity>
+
+        <activity android:name=".Activity.PenyewaActivity"
+            android:label="Daftar Pemesan">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activity.DashboardActivity"/>
+        </activity>
+
+        <activity
+            android:name=".Activity.DaftarMobilActivity"
+            android:label="Daftar Mobil"
+            android:parentActivityName=".Activity.DashboardActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activity.DashboardActivity"/>
+        </activity>
+
+        <activity android:name=".Activity.DashboardActivity"></activity>
+        <activity android:name=".Activity.RegisterActivity" />
+        <activity android:name=".Activity.LoginActivity" >
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.splashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

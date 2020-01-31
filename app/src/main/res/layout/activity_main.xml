@@ -11,13 +11,4 @@
         android:layout_marginTop="300dp"
         android:src="@drawable/abstrack1"
         android:layout_gravity="center"/>
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_marginTop="200dp"
-        android:layout_width="300dp"
-        android:layout_height="20dp"
-        android:layout_gravity="center"
-        android:max="100"/>
 </LinearLayout>
